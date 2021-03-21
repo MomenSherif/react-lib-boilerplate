@@ -1,0 +1,21 @@
+.test-component {
+  background-color: white;
+  border: 1px solid black;
+  padding: 16px;
+  width: 360px;
+  text-align: center;
+  background-color: red;
+}
+
+.heading {
+  font-size: 64px;
+  transform: rotate(45deg);
+  column-count: 3;
+  column-gap: 1.5em;
+  column-rule: 2px solid hotpink;
+}
+
+.test-component-secondary {
+  background-color: black;
+  color: white;
+}
