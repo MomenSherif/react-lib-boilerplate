@@ -1,7 +1,7 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import TestComponent from './TestCompoenent';
+import { TestComponent } from './TestCompoenent';
 import { TestComponentProps } from './TestComponent.types';
 
 export default {
