@@ -1,4 +1,7 @@
+const path = require('path');
+
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import multiInput from 'rollup-plugin-multi-input';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
@@ -7,16 +10,18 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import copy from 'rollup-plugin-copy';
+import del from 'rollup-plugin-delete';
 
 const packageJson = require('./package.json');
 
 export default [
   {
-    input: [
-      'src/index.ts',
-      'src/TestComponent/TestCompoenent.tsx',
-      'src/Dummy/Dummy.tsx',
-    ],
+    input: ['src/**/*.tsx', 'src/**/index.ts'],
+    // input: [
+    //   'src/index.ts',
+    //   'src/TestComponent/TestCompoenent.tsx',
+    //   'src/Dummy/Dummy.tsx',
+    // ],
     output: [
       {
         dir: 'dist',
@@ -25,6 +30,9 @@ export default [
       },
     ],
     plugins: [
+      multiInput({
+        relative: 'src/',
+      }),
       peerDepsExternal(),
       resolve(),
       commonjs(),
@@ -56,6 +64,7 @@ export default [
           },
         ],
       }),
+      del({ targets: ['dist/**/*.test.*', 'dist/**/*.stories.*'] }),
     ],
   },
 ];
