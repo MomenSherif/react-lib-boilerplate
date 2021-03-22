@@ -10,9 +10,6 @@ import cssnano from 'cssnano';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 
-const path = require('path');
-
-const packageJson = require('./package.json');
 
 export default [
   {
