@@ -13,9 +13,9 @@ const Template: Story<TestComponentProps> = (args) => (
   <TestComponent {...args} />
 );
 
-export const Default = Template.bind({}); // as Story<TestComponentProps> casting as bind lose type def!
+export const Default = Template.bind({}) as Story<TestComponentProps>;
 Default.args = {
-  children: 'Default',
+  theme: 'primary',
 };
 
 export const Secondary = Template.bind({});

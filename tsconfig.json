@@ -10,7 +10,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noImplicitReturns": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
   "include": ["src/**/*"],
   "exclude": [

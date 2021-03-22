@@ -1,5 +1,3 @@
-const path = require('path');
-
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import multiInput from 'rollup-plugin-multi-input';
 import resolve from '@rollup/plugin-node-resolve';
@@ -12,16 +10,13 @@ import cssnano from 'cssnano';
 import copy from 'rollup-plugin-copy';
 import del from 'rollup-plugin-delete';
 
+const path = require('path');
+
 const packageJson = require('./package.json');
 
 export default [
   {
     input: ['src/**/*.tsx', 'src/**/index.ts'],
-    // input: [
-    //   'src/index.ts',
-    //   'src/TestComponent/TestCompoenent.tsx',
-    //   'src/Dummy/Dummy.tsx',
-    // ],
     output: [
       {
         dir: 'dist',

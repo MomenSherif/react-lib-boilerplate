@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {HTMLProps,  ComponentProps} from 'react';
 
 import { TestComponentProps } from './TestComponent.types';
 import styles from './TestComponent.module.scss';
