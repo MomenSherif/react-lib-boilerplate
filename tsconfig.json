@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "build",
+    "declarationDir": "dist",
     "module": "esnext",
     "target": "es5",
     "lib": ["ES6", "dom", "ES2016", "ES2017", "ES2018"],

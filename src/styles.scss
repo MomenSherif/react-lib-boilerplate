@@ -1,5 +1,8 @@
+@import './variables';
+@import './normalize';
+
 body {
   margin: 0;
-  background-color: goldenrod;
+  background-color: $primary;
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -6,34 +6,56 @@ import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import copy from 'rollup-plugin-copy';
 
 const packageJson = require('./package.json');
 
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: packageJson.main,
-      format: 'cjs',
-      sourcemap: false,
+export default [
+  {
+    input: [
+      'src/index.ts',
+      'src/TestComponent/TestCompoenent.tsx',
+      'src/Dummy/Dummy.tsx',
+    ],
+    output: [
+      {
+        dir: 'dist',
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      postcss({
+        modules: true,
+        plugins: [autoprefixer(), cssnano()],
+      }),
+      typescript({
+        useTsconfigDeclarationDir: true,
+      }),
+      terser(),
+    ],
+  },
+  {
+    input: 'src/styles.scss',
+    output: {
+      file: 'dist/style.css',
     },
-    {
-      file: packageJson.module,
-      format: 'esm',
-      sourcemap: false,
-    },
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    postcss({
-      modules: true,
-      plugins: [autoprefixer(), cssnano()],
-    }),
-    typescript({
-      useTsconfigDeclarationDir: true,
-    }),
-    terser(),
-  ],
-};
+    plugins: [
+      postcss({
+        extract: true,
+        plugins: [autoprefixer(), cssnano()],
+      }),
+      copy({
+        targets: [
+          {
+            src: ['src/_variables.scss'],
+            dest: 'dist',
+          },
+        ],
+      }),
+    ],
+  },
+];
