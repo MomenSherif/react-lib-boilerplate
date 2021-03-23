@@ -55,7 +55,6 @@
     "react-dom": "^17.0.1",
     "rollup": "^2.42.1",
     "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-multi-input": "^1.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",

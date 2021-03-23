@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { TestComponent } from './TestCompoenent';
+import TestComponent from '../components/TestComponent';
 
 describe('<TestComponent />', () => {
   it('should have primary className with default props', () => {

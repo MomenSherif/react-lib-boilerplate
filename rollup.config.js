@@ -8,12 +8,10 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import copy from 'rollup-plugin-copy';
-import del from 'rollup-plugin-delete';
-
 
 export default [
   {
-    input: ['src/**/*.tsx', 'src/**/index.ts'],
+    input: ['src/components/**/*.tsx', 'src/components/**/index.ts'],
     output: [
       {
         dir: 'dist',
@@ -23,7 +21,7 @@ export default [
     ],
     plugins: [
       multiInput({
-        relative: 'src/',
+        relative: 'src/components',
       }),
       peerDepsExternal(),
       resolve(),
@@ -56,7 +54,6 @@ export default [
           },
         ],
       }),
-      del({ targets: ['dist/**/*.test.*', 'dist/**/*.stories.*'] }),
     ],
   },
 ];
