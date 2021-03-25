@@ -10,6 +10,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "setup": "npm i && npm run build && cd example && npm i",
     "dev": "concurrently \" npm run watch \" \" npm run start --prefix example \" ",
     "prebuild": "rm -rf dist",
     "build": "rollup -c",
@@ -18,7 +19,6 @@
     "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "prepublish": "npm run build",
     "lint:fix": "eslint . --fix"
   },
   "author": "Momen Sherif",
