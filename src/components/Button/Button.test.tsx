@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Button from '../components/Button';
+import { Button } from './Button';
 
 describe('<Button />', () => {
   it('Should handle onClick as props', () => {

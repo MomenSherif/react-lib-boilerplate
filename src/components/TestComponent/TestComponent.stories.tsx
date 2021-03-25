@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import TestComponent from '../components/TestComponent';
-import { TestComponentProps } from '../components/TestComponent/TestComponent.types';
+import TestComponent from '.';
+import { TestComponentProps } from './TestComponent.types';
 
 export default {
   title: 'TestComponent',

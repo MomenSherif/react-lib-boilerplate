@@ -2,7 +2,7 @@ import React from 'react';
 
 export type TestComponentProps = {
   /**
-   * Theme colors for our EEHC product
+   * Theme colors
    */
   theme: 'primary' | 'secondary';
   children?: React.ReactNode;

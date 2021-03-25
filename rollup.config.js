@@ -11,7 +11,12 @@ import copy from 'rollup-plugin-copy';
 
 export default [
   {
-    input: ['src/components/**/*.tsx', 'src/components/**/index.ts'],
+    input: [
+      'src/components/**/*.tsx',
+      'src/components/**/index.ts',
+      '!src/components/**/*.test.tsx',
+      '!src/components/**/*.stories.tsx',
+    ],
     output: [
       {
         dir: 'dist',
@@ -39,7 +44,7 @@ export default [
   {
     input: 'src/styles.scss',
     output: {
-      file: 'dist/style.css',
+      file: 'dist/styles.css',
     },
     plugins: [
       postcss({

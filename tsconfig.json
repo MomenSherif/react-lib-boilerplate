@@ -4,7 +4,7 @@
     "declarationDir": "dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["ES6", "dom", "ES2016", "ES2017", "ES2018"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
