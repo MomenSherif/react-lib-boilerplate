@@ -7,6 +7,7 @@
 |---------------------------|--|
 |    Setup *first time only*| setup|
 |    Development 			| dev |
+|    Storybook     			| storybook|
 |    Production  			| build |
 |    Testing     			| test:watch|
 
